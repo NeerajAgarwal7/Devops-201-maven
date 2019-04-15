@@ -20,7 +20,7 @@ node {
       //docker.withRegistry('https://registry.hub.docker.com','docker-credentials') {
         //app.push("${BUILD_NUMBER}")
         //app.push("latest")
-      }
+      //}
   }
   
   stage('Run Container') {
