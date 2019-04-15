@@ -12,17 +12,18 @@ node {
    }
   
   stage('Docker Image Build') {
-      app = docker.build("neerajagarwal7/devops-201:${BUILD_NUMBER}")
+  sh "docker ps"
+    //  app = docker.build("neerajagarwal7/devops-201:${BUILD_NUMBER}")
      }
   
   stage('Push Docker Image') {
-      docker.withRegistry('https://registry.hub.docker.com','docker-credentials') {
-        app.push("${BUILD_NUMBER}")
-        app.push("latest")
+      //docker.withRegistry('https://registry.hub.docker.com','docker-credentials') {
+        //app.push("${BUILD_NUMBER}")
+        //app.push("latest")
       }
   }
   
   stage('Run Container') {
-      sh "sudo docker run -p 8082:8080 -d neerajagarwal7/devops-201"
+      //sh "sudo docker run -p 8082:8080 -d neerajagarwal7/devops-201"
   }
 }
